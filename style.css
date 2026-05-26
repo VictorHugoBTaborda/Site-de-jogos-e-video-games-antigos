@@ -60,17 +60,12 @@ header p {
     backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
-    cursor: pointer; /* Transforma o mouse em mãozinha clicável */
 }
 
 .card:hover {
     transform: translateY(-8px);
     border-color: #ff007f;
     box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
-}
-
-.card:hover .click-info {
-    color: #00ffcc;
 }
 
 /* Imagens dos Consoles */
@@ -98,12 +93,34 @@ header p {
     flex-grow: 1;
 }
 
-.click-info {
-    font-size: 0.9rem;
-    color: #555577;
-    text-align: center;
-    margin-top: 10px;
-    transition: color 0.3s ease;
+/* Lista de Jogos */
+.games-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #00ffcc;
+}
+
+.games-section h3 {
+    font-size: 1rem;
+    color: #00ffcc;
+    margin-bottom: 5px;
+}
+
+.games-section ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.games-section ul li {
+    font-size: 1rem;
+    color: #e0e0ff;
+    padding: 2px 0;
+}
+
+.games-section ul li::before {
+    content: "➢ ";
+    color: #ff007f;
 }
 
 /* Badges de Ano */
@@ -123,104 +140,6 @@ header p {
 .gba { background-color: #3399ff; box-shadow: 0 0 8px #3399ff; }
 .saturn { background-color: #ffffff; box-shadow: 0 0 8px #ffffff; }
 .mega { background-color: #9933ff; box-shadow: 0 0 8px #9933ff; color: #fff; }
-
-/* ESTILO DA TELA COMPARTILHADA (MODAL) */
-#modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(5, 5, 15, 0.75);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 20px;
-}
-
-.modal-content {
-    background: #0f0f26;
-    border: 3px solid #ff007f;
-    box-shadow: 0 0 30px rgba(255, 0, 127, 0.6);
-    border-radius: 16px;
-    width: 100%;
-    max-width: 500px;
-    padding: 30px;
-    position: relative;
-    animation: abrirModal 0.3s ease forwards;
-}
-
-@keyframes abrirModal {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-#close-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #ff007f;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-}
-
-#close-btn:hover {
-    color: #00ffcc;
-}
-
-#modal-titulo {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.1rem;
-    color: #00ffcc;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-hr {
-    border: 0;
-    height: 1px;
-    background: #333355;
-    margin-bottom: 20px;
-}
-
-.modal-body p {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-    color: #e0e0ff;
-}
-
-.modal-body strong {
-    color: #ff007f;
-}
-
-.modal-biblioteca {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px;
-    border-left: 3px solid #00ffcc;
-}
-
-.modal-biblioteca h3 {
-    font-size: 1rem;
-    color: #00ffcc;
-    margin-bottom: 10px;
-}
-
-#modal-jogos {
-    font-size: 1rem;
-    color: #cccccc;
-    line-height: 1.4;
-}
-
-.escondido {
-    display: none !important;
-}
 
 footer {
     text-align: center;
