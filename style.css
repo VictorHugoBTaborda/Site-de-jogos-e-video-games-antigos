@@ -21,27 +21,6 @@ canvas {
     z-index: -1;
 }
 
-/* Estrutura para alinhar o Link na frente do Título */
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 15px;
-}
-
-#link-secreto-img {
-    height: 50px; /* Tamanho ajustável para a imagem pixelada */
-    width: auto;
-    image-rendering: pixelated; /* Mantém o aspecto retrô sem borrar */
-    filter: drop-shadow(0 0 8px #00ff55);
-}
-
-/* Classe utilitária para esconder elementos */
-.escondido {
-    display: none !important;
-}
-
 header {
     text-align: center;
     padding: 60px 20px 30px;
@@ -52,6 +31,7 @@ header h1 {
     font-size: 2.5rem;
     color: #00ffcc;
     text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    margin-bottom: 15px;
 }
 
 header p {
