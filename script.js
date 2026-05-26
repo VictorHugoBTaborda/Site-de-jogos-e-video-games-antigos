@@ -1,12 +1,16 @@
 let pixels = [];
-let quantidade = 45; // Quantidade ideal de blocos caindo
+let quantidade = 45;
+
+// Configuração do Novo Código Secreto "link91"
+let codigoLink = ['l', 'i', 'n', 'k', '9', '1'];
+let linkIndex = 0;
 
 function setup() {
-  // Cria o canvas cobrindo o fundo inteiro
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
+  canvas.style('z-index', '-1'); // Garante o canvas no fundo
   
-  // Cria os blocos iniciais em posições espalhadas
+  // Inicialização estável dos pixels
   for (let i = 0; i < quantidade; i++) {
     pixels.push({
       x: random(width),
@@ -19,10 +23,9 @@ function setup() {
 }
 
 function draw() {
-  // Rastro suave para efeito neon clássico
   background(13, 13, 26, 40); 
   
-  // Loop para desenhar e mover cada pixel
+  // Renderização contínua da chuva de pixels
   for (let i = 0; i < pixels.length; i++) {
     let p = pixels[i];
     
@@ -30,10 +33,8 @@ function draw() {
     fill(p.cor);
     rect(p.x, p.y, p.tamanho, p.tamanho);
     
-    // Atualiza a posição (movimento contínuo para baixo)
     p.y += p.velocidade;
     
-    // Reset ao chegar ao fim da tela
     if (p.y > height) {
       p.y = random(-50, 0);
       p.x = random(width);
@@ -41,7 +42,33 @@ function draw() {
   }
 }
 
-// Garante o redimensionamento dinâmico se a tela mudar de tamanho
+// Ouve as teclas para capturar o código "link91"
+function keyPressed() {
+  if (key.toLowerCase() === codigoLink[linkIndex]) {
+    linkIndex++;
+    if (linkIndex === codigoLink.length) {
+      ativarSegredoLink();
+      linkIndex = 0; // Reseta após a ativação
+    }
+  } else {
+    linkIndex = 0; // Se errar uma letra/número, reinicia
+  }
+}
+
+function ativarSegredoLink() {
+  // 1. Altera as cores da chuva para a paleta do Zelda (Verde e Ouro)
+  for (let i = 0; i < pixels.length; i++) {
+    pixels[i].cor = random(['#00ff55', '#ffd700', '#00aa33']);
+    pixels[i].velocidade += 1.5; // Dá uma acelerada no fundo
+  }
+  
+  // 2. Torna visível a imagem do Link na frente do título
+  let imagemLink = document.getElementById('link-secreto-img');
+  if (imagemLink) {
+    imagemLink.classList.remove('escondido');
+  }
+}
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
