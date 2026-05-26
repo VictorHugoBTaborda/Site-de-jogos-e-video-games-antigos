@@ -1,1 +1,150 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #0d0d1a;
+    color: #f0f0f5;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ff007f;
+    text-shadow: 0 0 5px #ff007f;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+/* Estilo dos Cards Retrô */
+.card {
+    background: rgba(20, 20, 35, 0.85);
+    border: 2px solid #333355;
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ff007f;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+}
+
+/* Imagens dos Consoles */
+.console-img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin: 15px auto;
+    display: block;
+    border-radius: 8px; /* Deixa os cantos das fotos pretas suaves */
+}
+
+.card h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 15px 0 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.05rem;
+    color: #cccccc;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* Lista de Jogos */
+.games-section {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #00ffcc;
+}
+
+.games-section h3 {
+    font-size: 1rem;
+    color: #00ffcc;
+    margin-bottom: 5px;
+}
+
+.games-section ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.games-section ul li {
+    font-size: 1rem;
+    color: #e0e0ff;
+    padding: 2px 0;
+}
+
+.games-section ul li::before {
+    content: "➢ ";
+    color: #ff007f;
+}
+
+/* Badges de Ano */
+.badge {
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    padding: 4px 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    color: #000;
+}
+
+.gbc { background-color: #ffcc00; box-shadow: 0 0 8px #ffcc00; }
+.n64 { background-color: #ff3333; box-shadow: 0 0 8px #ff3333; }
+.gba { background-color: #3399ff; box-shadow: 0 0 8px #3399ff; }
+.saturn { background-color: #ffffff; box-shadow: 0 0 8px #ffffff; }
+.mega { background-color: #9933ff; box-shadow: 0 0 8px #9933ff; color: #fff; }
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 0.9rem;
+    color: #666688;
+}
